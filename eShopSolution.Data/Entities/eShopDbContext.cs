@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using eShopSolution.Data.EF;
 using eShopSolution.Data.Configurations;
+using eShopSolution.Data.Extension;
 
 namespace eShopSolution.Data.Entities
 {
@@ -18,7 +19,7 @@ namespace eShopSolution.Data.Entities
         {
             base.OnModelCreating(modelBuilder);
 
-             
+            // Config Fluent API 
             modelBuilder.ApplyConfiguration(new CartConfiguration());
             modelBuilder.ApplyConfiguration(new AppConfigConfiguration());
             modelBuilder.ApplyConfiguration(new ProductConfiguration());
@@ -35,7 +36,8 @@ namespace eShopSolution.Data.Entities
             modelBuilder.ApplyConfiguration(new AppUserConfiguration());
             modelBuilder.ApplyConfiguration(new AppRoleConfiguration());
 
-           
+            //Create Model Seed Data
+            modelBuilder.Seed();
 
         }
 

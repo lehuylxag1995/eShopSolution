@@ -11,7 +11,6 @@ namespace eShopSolution.Data.EF
         public int Stock { get; set; }
         public int ViewCount { get; set; }
         public DateTime DateCreated { get; set; }
-        public string SeoAlias { get; set; }
 
         //1 giỏ hàng có nhiều sản phẩm
         public List<Cart> Carts { get; set; }
