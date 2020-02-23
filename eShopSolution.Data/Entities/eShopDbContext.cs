@@ -5,10 +5,12 @@ using System.Text;
 using eShopSolution.Data.EF;
 using eShopSolution.Data.Configurations;
 using eShopSolution.Data.Extension;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace eShopSolution.Data.Entities
 {
-    public class eShopDbContext : DbContext
+    public class eShopDbContext : IdentityDbContext<AppUser, AppRole, Guid>
     {
         public eShopDbContext(DbContextOptions options) : base(options)
         {
@@ -33,8 +35,15 @@ namespace eShopSolution.Data.Entities
             modelBuilder.ApplyConfiguration(new ProductTranslationConfiguration());
             modelBuilder.ApplyConfiguration(new PromotionConfiguration());
             modelBuilder.ApplyConfiguration(new TransactionConfiguration());
+
+            //Config Identity Database
             modelBuilder.ApplyConfiguration(new AppUserConfiguration());
             modelBuilder.ApplyConfiguration(new AppRoleConfiguration());
+            modelBuilder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaims");
+            modelBuilder.Entity<IdentityRoleClaim<Guid>>().ToTable("AppRoleClaims");
+            modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserTokens");
+            modelBuilder.Entity<IdentityUserRole<Guid>>().ToTable("AppUserRoles");
+            modelBuilder.Entity<IdentityUserLogin<Guid>>().ToTable("AppUserLogins");
 
             //Create Model Seed Data
             modelBuilder.Seed();
