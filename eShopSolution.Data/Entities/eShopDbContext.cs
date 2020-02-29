@@ -35,6 +35,7 @@ namespace eShopSolution.Data.Entities
             modelBuilder.ApplyConfiguration(new ProductTranslationConfiguration());
             modelBuilder.ApplyConfiguration(new PromotionConfiguration());
             modelBuilder.ApplyConfiguration(new TransactionConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductImageConfiguration());
 
             //Config Identity Database
             modelBuilder.ApplyConfiguration(new AppUserConfiguration());
