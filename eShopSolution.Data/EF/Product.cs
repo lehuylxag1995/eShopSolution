@@ -12,10 +12,11 @@ namespace eShopSolution.Data.EF
         public int ViewCount { get; set; }
         public DateTime DateCreated { get; set; }
 
-        //1 giỏ hàng có nhiều sản phẩm
         public List<Cart> Carts { get; set; }
         public List<OrderDetail> OrderDetails { get; set; }
         public List<ProductInCategory> ProductInCategories { get; set; }
         public List<ProductTranslation> ProductTranslations { get; set; }
+
+        public List<ProductImage> ProductImages { get; set; }
     }
 }
