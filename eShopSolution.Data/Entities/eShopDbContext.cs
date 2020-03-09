@@ -49,6 +49,8 @@ namespace eShopSolution.Data.Entities
             //Create Model Seed Data
             modelBuilder.Seed();
 
+            
+
         }
 
         public DbSet<Product> Products { get; set; }
@@ -64,6 +66,7 @@ namespace eShopSolution.Data.Entities
         public DbSet<ProductTranslation> ProductTranslations { get; set; }
         public DbSet<Promotion> Promotions { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
+        public DbSet<ProductImage> ProductImages { get; set; }
 
     }
 }

@@ -12,11 +12,8 @@ namespace eShopSolution.Data.EF
         public string Caption { get; set; }
         public int SortOrder { get; set; }
         public bool IsDefault { get; set; }
-        public int FileSize { get; set; }
+        public long FileSize { get; set; }
         public int ProductId { get; set; }
-
         public Product Product { get; set; }
-
-
     }
 }
